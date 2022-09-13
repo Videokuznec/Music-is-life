@@ -1,0 +1,36 @@
+<html><head>
+      <title>Music is life</title>
+   </head>
+<body>
+
+<div>
+<label for="price">What is Beethoven price today?</label>
+<input name="price" type="number" id="price">
+</div>
+<div>
+<label for="count">How much $ you have?</label>
+<input name="count" type="number" id="count">
+</div>
+<p>You can buy <span id="result"></span> BTC</p>
+
+<script>
+const price = document.getElementById('price');
+const count = document.getElementById('count');
+const result = document.getElementById('result');
+
+const change = function (e) {
+    let priceInt = price.value;
+    let countInt = count.value;
+
+    let sum = countInt / priceInt
+    result.innerHTML = sum.toFixed(10);
+}
+    
+price.addEventListener('input', change);
+price.addEventListener('propertychange', change);
+count.addEventListener('input', change);
+count.addEventListener('propertychange', change);
+</script>
+
+
+</body></html>
